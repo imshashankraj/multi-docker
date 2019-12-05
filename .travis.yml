@@ -9,14 +9,15 @@ script:
   - docker run shashank/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t shashank/multi-client ./client
-  - docker build -t shashank/multi-nginx ./nginx
-  - docker build -t shashank/multi-server ./server
-  - docker build -t shashank/multi-worker ./worker
+  - docker build -t imshashankraj/multi-client ./client
+  - docker build -t imshashankraj/multi-nginx ./nginx
+  - docker build -t imshashankraj/multi-server ./server
+  - docker build -t imshashankraj/multi-worker ./worker
   # Log into the Docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push shashank/multi-client
-  - docker push shashank/multi-nginx
-  - docker push shashank/multi-server
-  - docker push shashank/multi-worker
+  - docker push imshashankraj/multi-client
+  - docker push imshashankraj/multi-nginx
+  - docker push imshashankraj/multi-server
+  - docker push imshashankraj/multi-worker
+
