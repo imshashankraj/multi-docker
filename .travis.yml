@@ -13,7 +13,7 @@ after_success:
   - sudo docker build -t imshashankraj/multi-nginx ./nginx
   - sudo docker build -t imshashankraj/multi-server ./server
   - sudo docker build -t imshashankraj/multi-worker ./worker
-  # Log into the Docker CLI
+  ## Log into the Docker CLI - Skip Special Chars
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   ## Take those images and push them to docker hub
   - sudo docker push imshashankraj/multi-client
